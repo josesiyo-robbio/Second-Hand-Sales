@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* styles.css */
+
+/* Personaliza el color de fondo y texto para mat-toolbar */
+:root {
+  --mat-sys-surface: #FFD9E1; /* Color del fondo (ajusta según lo que necesites) */
+
+}
+
+/* Personalizar la mat-toolbar */
+.mat-toolbar {
+  background-color: var(--mat-sys-surface);
+
+}
+

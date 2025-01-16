@@ -1,0 +1,31 @@
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">Mis Productos</h1>
+      <p class="lead text-body-secondary">Aquí puedes explorar todos los productos disponibles para poner a la venta.</p>
+    </div>
+  </div>
+</section>
+
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <!-- Repetir las tarjetas de productos usando ngFor -->
+      <div class="col" *ngFor="let product of products">
+        <div class="card shadow-sm">
+          <img class="card-img-top" [src]="product.image" alt="Producto">
+          <div class="card-body">
+            <p class="card-text">{{ product.description }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
+              </div>
+              <small class="text-body-secondary">{{ product.time }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
