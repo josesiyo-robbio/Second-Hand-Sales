@@ -4,6 +4,7 @@ import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from
 import {MatProgressSpinner, MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {LoadingDialogComponent} from './loading-dialog/loading-dialog.component';
 import { MessageDialogComponent } from './message-dialog/message-dialog.component';
+import {MatButton} from '@angular/material/button';
 
 
 
@@ -16,6 +17,7 @@ import { MessageDialogComponent } from './message-dialog/message-dialog.componen
     MatDialogActions,
     MatDialogClose,
     MatProgressSpinnerModule,
+    MatButton,
   ]
 })
 export class SharedModule { }

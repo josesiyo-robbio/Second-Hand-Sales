@@ -2,8 +2,11 @@ import {Component, inject, OnInit} from '@angular/core';
 import {StateService} from '../../services/state.service';
 import {Products} from '../../interfaces/products';
 import {Router} from '@angular/router';
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {LoadingDialogComponent} from '../../../shared/loading-dialog/loading-dialog.component';
+import {MessageDialogComponent} from '../../../shared/message-dialog/message-dialog.component';
+import {timer} from 'rxjs';
+
 
 @Component({
   selector: 'app-sell-product',
@@ -17,8 +20,9 @@ export class SellProductComponent implements OnInit
   //CLASS PROPERTIES
   public product : Products | null = null;
   public dialog = inject(MatDialog);
+  private dialogRef: MatDialogRef<LoadingDialogComponent, any> | undefined;
 
-  //CONSDTRUCTOR
+  //CONSTRUCTOR
   constructor
   (
     private stateService: StateService,
@@ -30,10 +34,28 @@ export class SellProductComponent implements OnInit
   //METHODS
   openDialog()
   {
-    this.dialog.open(LoadingDialogComponent, {
-      disableClose: true, // Evita el cierre al hacer clic afuera o con la tecla Escape
+    this.dialogRef = this.dialog.open(LoadingDialogComponent,
+    {
+      disableClose: true,
     });
+
+    timer(1000).subscribe(() => {
+      if (this.dialogRef)
+      {
+        this.dialogRef.close();
+      }
+    });
+
+    this.dialogRef.afterClosed().subscribe(result => {
+      this.dialog.open(MessageDialogComponent, {
+        data : {
+          title: 'Exito',
+          message : 'tu producto ha sido publicado',
+        },
+      })
+    })
   }
+
 
 
 
@@ -49,6 +71,8 @@ export class SellProductComponent implements OnInit
     }
 
     console.log(this.stateService.getProduct());
+
+
 
   }
 
