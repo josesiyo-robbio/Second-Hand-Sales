@@ -2,6 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Products} from '../../interfaces/products';
 import {ProductsService} from '../../services/products-service.service';
 import {Subscription} from 'rxjs';
+import {Router} from '@angular/router';
+import {StateService} from '../../services/state.service';
 
 @Component({
   selector: 'pages-dashboard-page',
@@ -19,7 +21,11 @@ export class DashboardPageComponent implements OnInit,OnDestroy
 
 
   //CONSTRUCTOR
-  constructor(private productsService: ProductsService) {
+  constructor(
+    private productsService: ProductsService,
+    private stateService: StateService,
+    private router: Router)
+  {
     this.productsSubscription = new Subscription();
   }
 
@@ -37,5 +43,12 @@ export class DashboardPageComponent implements OnInit,OnDestroy
     if (this.productsSubscription) {
       this.productsSubscription.unsubscribe();
     }
+  }
+
+
+  toSellProduct(product : Products): void
+  {
+    this.stateService.setProducts(product);
+    this.router.navigate(['/profile/sell-item']);
   }
 }

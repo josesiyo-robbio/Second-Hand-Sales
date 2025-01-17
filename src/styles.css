@@ -14,6 +14,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* Personalizar la mat-toolbar */
 .mat-toolbar {
   background-color: var(--mat-sys-surface);
+  background-size: cover;
 
 }
 

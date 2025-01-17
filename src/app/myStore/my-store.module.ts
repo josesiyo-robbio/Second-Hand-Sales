@@ -9,13 +9,23 @@ import {MatListItem, MatNavList} from '@angular/material/list';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import {MatButton} from '@angular/material/button';
 import {MatToolbar} from '@angular/material/toolbar';
+import { SellProductComponent } from './pages/sell-product/sell-product.component';
+import {
+  MatCard,
+  MatCardActions,
+  MatCardContent,
+  MatCardHeader,
+  MatCardImage,
+  MatCardModule
+} from '@angular/material/card';
 
 
 @NgModule({
   declarations: [
     LayoutComponent,
     SidebarComponent,
-    DashboardPageComponent
+    DashboardPageComponent,
+    SellProductComponent
   ],
   imports: [
     MatSidenavModule,
@@ -26,6 +36,11 @@ import {MatToolbar} from '@angular/material/toolbar';
     MatListItem,
     MatButton,
     MatToolbar,
+    MatCardModule,
+    MatCardHeader,
+    MatCardContent,
+    MatCardActions,
+    MatCardImage,
 
   ],
   exports: []

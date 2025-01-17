@@ -6,7 +6,8 @@ import {Products} from '../interfaces/products';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService {
+export class ProductsService
+{
   private products: Products[] = [
     {
       id: 1,
@@ -46,9 +47,12 @@ export class ProductsService {
     }
   ];
 
-  constructor() { }
 
-  getProducts(): Observable<Products[]> {
+
+
+  //METHODS
+  getProducts(): Observable<Products[]>
+  {
     // Aquí simulas una llamada HTTP a una API, usando 'of' de RxJS para devolver los datos de forma asincrónica
     return of(this.products);
   }
