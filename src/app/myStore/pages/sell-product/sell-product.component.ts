@@ -36,6 +36,9 @@ export class SellProductComponent implements OnInit
   {
     this.dialogRef = this.dialog.open(LoadingDialogComponent,
     {
+      data: {
+        title: 'Publicando producto',
+      },
       disableClose: true,
     });
 
@@ -67,13 +70,8 @@ export class SellProductComponent implements OnInit
     if(!this.product)
     {
       this.router.navigate(['']);
-
     }
-
     console.log(this.stateService.getProduct());
-
-
-
   }
 
 

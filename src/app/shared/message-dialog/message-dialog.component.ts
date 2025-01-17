@@ -8,11 +8,14 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
   templateUrl: './message-dialog.component.html',
   styleUrl: './message-dialog.component.css'
 })
-export class MessageDialogComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
-    if (!data) {
+export class MessageDialogComponent 
+{
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) 
+  {
+    if (!data) 
+    {
       console.error('No se pasaron datos al diálogo');
-      this.data = { title: 'Error', message: 'No se proporcionaron datos.' }; // Valor predeterminado
+      this.data = { title: 'Error', message: 'No se proporcionaron datos.' }; 
     }
   }
 }
