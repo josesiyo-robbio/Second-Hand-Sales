@@ -3,18 +3,18 @@
     <mat-card class="example-card" appearance="outlined" >
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Nombre del producto</mat-card-title>
-        <mat-card-subtitle>$40.00</mat-card-subtitle>
+        <mat-card-title>{{product?.name}}</mat-card-title>
+        <mat-card-subtitle>${{product?.price}}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image src="https://www.cnet.com/a/img/resize/40d79d22ce133088154b85f3af2b2a5571bbc16e/hub/2021/10/05/80e1a950-d66a-4209-ab0e-b4c018eb93d3/switch-oled-box.jpg?auto=webp&width=1200" alt="Photo of a Shiba Inu" >
+      <img mat-card-image src="{{product?.image}}" alt="Photo of a Shiba Inu" >
       <mat-card-content >
         <p>
-          Aqui va descripcion del producto recibida poor el otro componente
+          {{product?.description}}
         </p>
       </mat-card-content>
       <mat-card-actions>
         <span>Vender en :</span>
-        <button mat-stroked-button class="sell-button">Mercado Libre</button>
+        <button mat-stroked-button class="sell-button" (click)="openDialog()">Mercado Libre</button>
         <button mat-stroked-button>Facebook</button>
       </mat-card-actions>
     </mat-card>

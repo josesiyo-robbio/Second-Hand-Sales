@@ -1,0 +1,13 @@
+.loading-dialog {
+  display: flex; /* Activa Flexbox */
+  flex-direction: column; /* Alinea el spinner y el texto en columna */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+
+  text-align: center; /* Centra el texto */
+}
+
+
+mat-spinner {
+  margin: 3em;
+}

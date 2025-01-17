@@ -8,6 +8,10 @@ import {MatButton} from '@angular/material/button';
 import {MatSidenav, MatSidenavContainer, MatSidenavModule} from '@angular/material/sidenav';
 import {MatListItem, MatNavList} from '@angular/material/list';
 import {MatToolbar} from '@angular/material/toolbar';
+import { LoadingDialogComponent } from './shared/loading-dialog/loading-dialog.component';
+import {SharedModule} from './shared/shared.module';
+import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from '@angular/material/dialog';
+import {MatProgressSpinner} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,10 @@ import {MatToolbar} from '@angular/material/toolbar';
     MatNavList,
     MatListItem,
     MatSidenavModule,
-    MatToolbar
+    MatToolbar,
+    SharedModule,
+
+
   ],
   providers: [
     provideAnimationsAsync()
