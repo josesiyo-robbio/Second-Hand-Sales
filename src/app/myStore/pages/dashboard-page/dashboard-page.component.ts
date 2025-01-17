@@ -33,10 +33,23 @@ export class DashboardPageComponent implements OnInit,OnDestroy
 
   //METHODS
   ngOnInit(): void {
-    this.productsSubscription = this.productsService.getProducts().subscribe(data => {
-      this.products = data;
-    });
+    this.productsSubscription = this.productsService.getProducts().subscribe(
+      (data) => {
+        if (data && Array.isArray(data)) {
+          this.products = data;
+          console.log('Productos cargados:', this.products);
+        } else {
+          console.warn('No se encontraron productos válidos.');
+          this.products = [];
+        }
+      },
+      (error) => {
+        console.error('Error al cargar productos:', error);
+        this.products = [];
+      }
+    );
   }
+
 
   ngOnDestroy(): void {
     // Limpiar la suscripción cuando el componente se destruya

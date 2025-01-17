@@ -34,6 +34,7 @@ export class SellProductComponent implements OnInit
   //METHODS
   openDialog()
   {
+
     this.dialogRef = this.dialog.open(LoadingDialogComponent,
     {
       data: {
