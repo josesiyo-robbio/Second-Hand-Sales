@@ -18,6 +18,10 @@ import {
   MatCardImage,
   MatCardModule
 } from '@angular/material/card';
+import { NewProductComponent } from './pages/new-product/new-product.component';
+import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
+import {MatOption, MatSelect} from '@angular/material/select';
+import {MatInput} from '@angular/material/input';
 
 
 @NgModule({
@@ -25,7 +29,8 @@ import {
     LayoutComponent,
     SidebarComponent,
     DashboardPageComponent,
-    SellProductComponent
+    SellProductComponent,
+    NewProductComponent
   ],
   imports: [
     MatSidenavModule,
@@ -41,6 +46,10 @@ import {
     MatCardContent,
     MatCardActions,
     MatCardImage,
+    MatFormFieldModule,
+    MatSelect,
+    MatOption,
+    MatInput,
 
   ],
   exports: []
