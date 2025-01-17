@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'pages-new-product',
+  selector: 'myStore-new-product-page',
   standalone: false,
 
   templateUrl: './new-product.component.html',

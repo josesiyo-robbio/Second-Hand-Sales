@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: 'profile',
   loadChildren : ()  => import('./myStore/my-store.module').then(m => m.MyStoreModule)},
-  { path : '**', redirectTo : 'profile' }
+  { path : '**', redirectTo : 'profile', pathMatch: 'full' },
 ];
 
 @NgModule({

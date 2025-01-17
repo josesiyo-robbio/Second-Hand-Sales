@@ -18,10 +18,22 @@ import {
   MatCardImage,
   MatCardModule
 } from '@angular/material/card';
-import { NewProductComponent } from './pages/new-product/new-product.component';
+import { NewProductComponent } from './pages/new-product-page/new-product.component';
 import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
 import {MatOption, MatSelect} from '@angular/material/select';
 import {MatInput} from '@angular/material/input';
+import { SellHistoryPageComponent } from './pages/sell-history-page/sell-history-page.component';
+import {
+  MatCell, MatCellDef,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef,
+  MatHeaderRow, MatHeaderRowDef, MatNoDataRow,
+  MatRow,
+  MatTable, MatTableModule
+} from '@angular/material/table';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatSort, MatSortModule} from '@angular/material/sort';
 
 
 @NgModule({
@@ -30,7 +42,8 @@ import {MatInput} from '@angular/material/input';
     SidebarComponent,
     DashboardPageComponent,
     SellProductComponent,
-    NewProductComponent
+    NewProductComponent,
+    SellHistoryPageComponent
   ],
   imports: [
     MatSidenavModule,
@@ -50,6 +63,22 @@ import {MatInput} from '@angular/material/input';
     MatSelect,
     MatOption,
     MatInput,
+    MatTable,
+    MatColumnDef,
+    MatHeaderCell,
+    MatCell,
+    MatHeaderRow,
+    MatRow,
+    MatPaginator,
+    MatHeaderCellDef,
+    MatCellDef,
+    MatSort,
+    MatHeaderRowDef,
+    MatNoDataRow,
+    MatTableModule,
+    MatPaginatorModule, // Si usas paginación
+    MatSortModule
+
 
   ],
   exports: []
