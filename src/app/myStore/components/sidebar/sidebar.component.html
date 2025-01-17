@@ -2,10 +2,10 @@
   <!-- Sidenav -->
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <mat-nav-list>
+      <a mat-list-item routerLink="/profile/dashboard">Mi Perfil</a>
       <a mat-list-item routerLink="/profile/dashboard">Mis productos</a>
       <a mat-list-item routerLink="/profile/add-product">Añadir producto</a>
       <a mat-list-item routerLink="/profile/sales-history">Historial de ventas</a>
-      <a mat-list-item routerLink="/profile/settings">Configuración</a>
     </mat-nav-list>
     <div style="margin-top: 20px;">
       <button mat-raised-button color="primary" (click)="drawer.toggle()">Cerrar Menú</button>
