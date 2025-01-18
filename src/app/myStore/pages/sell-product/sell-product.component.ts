@@ -32,12 +32,12 @@ export class SellProductComponent implements OnInit
 
 
   //METHODS
-  openDialog(productId: number)
+  openDialog(productId: string)
   {
 
     const newState: boolean = true;
     const products = JSON.parse(localStorage.getItem('products') || '[]');
-    const product = products.flat().find((p: { id: number; }) => p.id === productId);
+    const product = products.flat().find((p: { id: string; }) => p.id === productId);
     if (product) {
       product.published = newState;
       localStorage.setItem('products', JSON.stringify(products));

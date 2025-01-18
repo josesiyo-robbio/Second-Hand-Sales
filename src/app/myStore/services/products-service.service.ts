@@ -10,7 +10,7 @@ export class ProductsService
 {
   private products: Products[] = [
     {
-      id: 1,
+      id: '1',
       price : 50,
       name : 'PS VITA SLIM',
       image: 'https://img1.kakaku.k-img.com/images/maga/icv/sp828/3056/woman_rev449_img01_l.jpg',
@@ -19,7 +19,7 @@ export class ProductsService
       published : true,
     },
     {
-      id: 2,
+      id: '2',
       price : 250,
       name : 'Nintendo Switch Oled',
       image: 'https://www.nintendojo.com/wp-content/uploads/2021/10/Nintendo-Switch-OLED-Model-01.png',
@@ -28,7 +28,7 @@ export class ProductsService
       published : true,
     },
     {
-      id: 3,
+      id: '3',
       price : 250,
       name : 'Nintendo Switch Oled',
       image: 'https://3.bp.blogspot.com/-zZ_swsL_4_8/TbZZxOkWn3I/AAAAAAAAAEI/FG1Fxtx3JP8/s1600/White_PSP_Go.jpg',
@@ -37,7 +37,7 @@ export class ProductsService
       published : false,
     },
     {
-      id: 4,
+      id: '4',
       price : 250,
       name : 'Nintendo Switch Oled',
       image: 'https://fs.npstatic.com/userfiles/7446224/image/lenovo-legion-go/nextpit-lenovo-legion-go-test-wasd-control-cr3-w450.jpg',
@@ -46,7 +46,7 @@ export class ProductsService
       published : false,
     },
     {
-      id: 5,
+      id: '5',
       price : 250,
       name : 'Nintendo Switch Oled',
       image: 'https://cdn-products.eneba.com/resized-products/PXcS9tZEFRDWxJWHZw6Iw1Tm0ZIfv8vMmCVBUhkMRRA_350x200_1x-0',
@@ -55,7 +55,7 @@ export class ProductsService
       published : false,
     },
     {
-      id: 6,
+      id: '6',
       price : 250,
       name : 'Nintendo Switch Oled',
       image: 'https://www.gamespot.com/a/uploads/screen_kubrick/1823/18237460/4218493-unboxing_steamdeckoled_site.jpg',

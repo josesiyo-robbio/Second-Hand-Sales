@@ -42,6 +42,7 @@ import {MAT_MOMENT_DATE_FORMATS, MomentDateAdapter} from '@angular/material-mome
 import * as moment from 'moment';
 import {MatIcon} from '@angular/material/icon';
 import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
     MatMiniFabButton,
     MatFabAnchor,
     MatFabButton,
+    ReactiveFormsModule,
 
 
   ],
