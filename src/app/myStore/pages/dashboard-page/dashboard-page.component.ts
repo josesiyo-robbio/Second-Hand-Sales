@@ -102,5 +102,9 @@ export class DashboardPageComponent implements OnInit,OnDestroy
   }
 
 
+  toStatusProduct(product: Products) {
 
+    this.stateService.setProducts(product);
+    this.router.navigate(['/profile/status-product']);
+  }
 }

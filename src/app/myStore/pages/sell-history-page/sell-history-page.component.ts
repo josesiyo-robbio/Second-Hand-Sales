@@ -1,75 +1,66 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatSort, MatSortModule} from '@angular/material/sort';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
-export interface UserData {
+export interface ProductData {
   id: string;
   name: string;
-  progress: string;
-  fruit: string;
+  price: number;
+  date: string;
+  status: string;
 }
-
-/** Constants used to fill up our data base. */
-const FRUITS: string[] = [
-  'blueberry',
-  'lychee',
-  'kiwi',
-  'mango',
-  'peach',
-  'lime',
-  'pomegranate',
-  'pineapple',
-];
-const NAMES: string[] = [
-  'Maia',
-  'Asher',
-  'Olivia',
-  'Atticus',
-  'Amelia',
-  'Jack',
-  'Charlotte',
-  'Theodore',
-  'Isla',
-  'Oliver',
-  'Isabella',
-  'Jasper',
-  'Cora',
-  'Levi',
-  'Violet',
-  'Arthur',
-  'Mia',
-  'Thomas',
-  'Elizabeth',
-];
 
 @Component({
   selector: 'myStore-sell-history-page',
-  standalone: false,
-
   templateUrl: './sell-history-page.component.html',
-  styleUrl: './sell-history-page.component.css'
+  standalone : false,
+  styleUrls: ['./sell-history-page.component.css']
 })
-export class SellHistoryPageComponent {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
-  dataSource: MatTableDataSource<UserData>;
+export class SellHistoryPageComponent implements AfterViewInit {
+  displayedColumns: string[] = ['id', 'name', 'price', 'date', 'status'];
+  dataSource: MatTableDataSource<ProductData>;
+  pageSizeOptions: number[] = [5, 10, 25];  // Opciones predeterminadas
+  paginatorPageSize: number = 5;  // Tamaño de página predeterminado
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor() {
-    // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+    // Datos de ejemplo
+    const products = [
+      { id: '1', name: 'PS5', price: 499, date: '2025-01-01', status: 'Sold' },
+      { id: '2', name: 'Xbox Series X', price: 499, date: '2025-01-02', status: 'Sold' },
+      { id: '3', name: 'Nintendo Switch', price: 299, date: '2025-01-03', status: 'Sold' },
+      { id: '4', name: 'PS Vita', price: 199, date: '2025-01-04', status: 'Sold' },
+      { id: '5', name: 'Oculus Quest 2', price: 299, date: '2025-01-05', status: 'Sold' }
+    ];
 
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+    // Asignar los productos a la fuente de datos
+    this.dataSource = new MatTableDataSource(products);
   }
 
   ngAfterViewInit() {
+    // Después de inicializar las vistas, se asignan el paginator y sort
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+
+    // Ajustamos dinámicamente las opciones del paginator según la cantidad de productos
+    this.adjustPaginator();
+  }
+
+  // Método para ajustar las opciones del paginator dinámicamente
+  private adjustPaginator() {
+    const numberOfItems = this.dataSource.data.length;
+
+    // Si hay menos de 5 productos, cambiamos las opciones de tamaño de página
+    if (numberOfItems < 5) {
+      this.pageSizeOptions = [numberOfItems];  // Solo mostramos el tamaño correcto
+      this.paginatorPageSize = numberOfItems;  // Ajustamos el tamaño de la página
+    } else {
+      this.pageSizeOptions = [5, 10, 25];  // Opciones predeterminadas cuando hay más de 5 productos
+      this.paginatorPageSize = 5;  // Tamaño de página predeterminado
+    }
   }
 
   applyFilter(event: Event) {
@@ -81,21 +72,3 @@ export class SellHistoryPageComponent {
     }
   }
 }
-
-/** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-  const name =
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
-    ' ' +
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
-    '.';
-
-  return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
-  };
-}
-
-

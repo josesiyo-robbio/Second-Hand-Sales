@@ -43,6 +43,7 @@ import * as moment from 'moment';
 import {MatIcon} from '@angular/material/icon';
 import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
 import {ReactiveFormsModule} from '@angular/forms';
+import { StatusProductPageComponent } from './pages/status-product-page/status-product-page.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     SellProductComponent,
     NewProductComponent,
     SellHistoryPageComponent,
-    MyProfilePageComponent
+    MyProfilePageComponent,
+    StatusProductPageComponent
   ],
   imports: [
     MatSidenavModule,

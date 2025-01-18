@@ -1,0 +1,24 @@
+<div class="container container animate__animated animate__fadeInDown">
+  <mat-card class="example-card" appearance="raised">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{product?.name}}</mat-card-title>
+      <mat-card-subtitle>${{product?.price}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{product?.image}}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        {{product?.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <span>Sell on:</span>
+
+    </mat-card-actions>
+
+
+  </mat-card>
+
+</div>
+
+

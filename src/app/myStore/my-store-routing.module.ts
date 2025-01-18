@@ -6,6 +6,7 @@ import {SellProductComponent} from './pages/sell-product/sell-product.component'
 import {NewProductComponent} from './pages/new-product-page/new-product.component';
 import {SellHistoryPageComponent} from './pages/sell-history-page/sell-history-page.component';
 import {MyProfilePageComponent} from './pages/my-profile-page/my-profile-page.component';
+import {StatusProductPageComponent} from './pages/status-product-page/status-product-page.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path  :   'dashboard',    component   : DashboardPageComponent  },
     { path  :   'sell-item',    component   : SellProductComponent    },
     { path  :   'new-product',  component   : NewProductComponent     },
+      { path  :   'status-product',  component   : StatusProductPageComponent     },
     { path  :   'sell-history',  component  : SellHistoryPageComponent     },
     { path  :   'my',  component            : MyProfilePageComponent     },
     { path  :   '**',           redirectTo  : 'dashboard', pathMatch: 'full'           },

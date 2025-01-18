@@ -20,7 +20,7 @@
               <div class="btn-group">
 
 
-                <button mat-stroked-button (click)="toSellProduct(product)" *ngIf="!product.published">Status</button>
+                <button mat-stroked-button (click)="toStatusProduct(product)" *ngIf="!product.published">Status</button>
 
                 <div class="d-flex align-items-center gap-2" *ngIf="product.published">
                   <button mat-raised-button class="p-1" (click)="toSellProduct(product)">Publish</button>
