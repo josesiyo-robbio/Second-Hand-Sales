@@ -1,67 +1,44 @@
-/* Contenedor que ocupa todo el ancho de la pantalla */
-.container {
-  display: flex;
-  justify-content: center; /* Centra la tarjeta horizontalmente */
-  padding-top: 3em;
-  padding-bottom: 3em;
-  width: 100%; /* Cambiado de 100vw a 100% */
-  max-width: 100%; /* Evita que el contenedor se expanda más allá del ancho de la ventana */
-  box-sizing: border-box; /* Asegura que padding no cause desbordamiento */
-  overflow-x: hidden; /* Evita el desbordamiento horizontal */
-}
 
-/* Tarjeta */
-.example-card {
-  width: 100%; /* La tarjeta ocupa todo el ancho disponible */
-  max-width: 500px; /* Limita el ancho máximo para que no ocupe toda la pantalla */
-  height: auto; /* Ajuste automático en la altura */
-  max-height: 600px; /* Límite de altura para la tarjeta */
-  border-radius: 8px; /* Bordes redondeados */
-  overflow: hidden; /* Evita que los elementos se desborden fuera de la tarjeta */
-  box-sizing: border-box; /* Asegura que el relleno no cause desbordamiento */
-}
 
-/* Imagen dentro de la tarjeta */
-mat-card img {
-  width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
-  height: auto; /* Mantiene la proporción de la imagen */
-  max-height: 300px; /* Ajusta la altura de la imagen para evitar el desbordamiento */
-  object-fit: cover; /* La imagen se ajusta sin cortarse */
-}
 
-/* Encabezado de la tarjeta */
-mat-card-header {
-  display: flex;
+.product-card
+{
   align-items: center;
 }
 
-.example-header-image {
-  background-image: url('https://images.unsplash.com/photo-1525447153550-9b38670d8fcc?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-  background-size: cover;
-  background-position: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+img[mat-card-image]
+{
+  max-width: 500px;
+  max-height: 900px;
 }
 
-/* Estilo de los botones */
+
 mat-card-actions {
   display: flex;
-  justify-content: flex-start; /* Alinea los botones al inicio */
-  gap: 8px; /* Espacio entre los botones */
-  padding: 8px 0; /* Agrega un poco de espacio alrededor de los botones */
+  justify-content: center;
+  align-items: center;
 }
 
-/* Evita desbordamientos */
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Evita el scroll horizontal global */
+@media (max-width: 768px)
+{
+  img[mat-card-image]
+  {
+    max-width: 300px;
+    max-height: 700px;
+  }
+
+  .store-card
+  {
+    padding-top: 0.5em;
+  }
+
+  mat-card-actions button {
+    font-size: 0.8em;
+  }
+
+
+
 }
-
-
-
-
 
 
 
@@ -192,10 +169,13 @@ body{margin-top:20px;}
 @media (max-width: 575.98px) {
   .steps-header {
     display: none
+
   }
   .steps-body,
   .step {
-    display: block
+    display: block;
+
+
   }
   .step {
     border-right: 0;
@@ -217,4 +197,15 @@ body{margin-top:20px;}
 
 .bg-secondary {
   background-color: #f7f7f7 !important;
+}
+
+.progress-bar
+{
+  background-color: #BE0022 !important;
+}
+
+.steps {
+  border: 2px solid #804149; /* Aquí puedes poner el color que desees */
+  padding: 10px; /* Agrega algo de espacio interno si lo necesitas */
+  border-radius: 8px; /* Opcional: para bordes redondeados */
 }
