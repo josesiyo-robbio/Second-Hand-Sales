@@ -1,29 +1,3 @@
-.demo-inline-calendar-card {
-  max-width: 200px;
-}
-
-
-.mat-grid-tile {
-background-color: #712cf9;
-  color: #93e2bb;
-}
-
-
-.height
-{
-  padding-top: 2em;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-bottom: 2em;
-
-
-}
-
-
-.custom-card
-{
-  padding-left: 10em;
-}
 
 
 
@@ -34,23 +8,11 @@ img {
   height: 100%;
 }
 
-
-.skill-block {
-  width: 30%;
+.person-name
+{
+  align-items: end;
+  text-align: end;
 }
-
-@media (min-width: 991px) and (max-width:1200px) {
-  .skill-block {
-    padding: 32px !important;
-  }
-}
-
-@media (min-width: 1200px) {
-  .skill-block {
-    padding: 56px !important;
-  }
-}
-
 
 
 .bg-green

@@ -44,6 +44,7 @@ import {MatIcon} from '@angular/material/icon';
 import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
 import {ReactiveFormsModule} from '@angular/forms';
 import { StatusProductPageComponent } from './pages/status-product-page/status-product-page.component';
+import {MatProgressBar} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -102,6 +103,7 @@ import { StatusProductPageComponent } from './pages/status-product-page/status-p
     MatFabAnchor,
     MatFabButton,
     ReactiveFormsModule,
+    MatProgressBar,
 
 
   ],
