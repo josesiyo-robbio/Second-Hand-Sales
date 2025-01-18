@@ -16,7 +16,7 @@ export class ProductsService
       image: 'https://img1.kakaku.k-img.com/images/maga/icv/sp828/3056/woman_rev449_img01_l.jpg',
       description: 'Este es un producto increíble con todas las características que buscas.',
       time: '10 Minutes Ago',
-      published : true,
+      published : false,
     },
     {
       id: '2',
@@ -52,7 +52,7 @@ export class ProductsService
       image: 'https://cdn-products.eneba.com/resized-products/PXcS9tZEFRDWxJWHZw6Iw1Tm0ZIfv8vMmCVBUhkMRRA_350x200_1x-0',
       description: 'Producto de alta tecnología, diseñado para durar.',
       time: '10 Minutes Ago',
-      published : false,
+      published : true,
     },
     {
       id: '6',
@@ -61,7 +61,7 @@ export class ProductsService
       image: 'https://www.gamespot.com/a/uploads/screen_kubrick/1823/18237460/4218493-unboxing_steamdeckoled_site.jpg',
       description: 'Producto de última generación, ideal para todo tipo de usuario.',
       time: '10 Minutes Ago',
-      published : false,
+      published : true,
     }
   ];
 
