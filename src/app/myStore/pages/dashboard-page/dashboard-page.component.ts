@@ -77,21 +77,19 @@ export class DashboardPageComponent implements OnInit,OnDestroy
       data: {
         title: 'Delete Product',
         message: 'Are you sure to delete the product?',
-        onOk: () => {
+        onOk: () =>
+        {
           console.log('Deletar producto');
           console.log('ID recibido:', productId);
 
-          // Obtiene los productos del localStorage
           const products = JSON.parse(localStorage.getItem('products') || '[]')[0] || [];
 
           console.log('Productos antes de eliminar:', products);
 
-          // Filtra los productos, excluyendo el que tenga el id que se desea eliminar
           const updatedProducts = products.filter((product: { id: string }) => product.id !== productId.toString());
 
           console.log('Productos después de eliminar:', updatedProducts);
 
-          // Guarda el array actualizado en localStorage
           localStorage.setItem('products', JSON.stringify([updatedProducts]));
           window.location.reload();
 
@@ -102,8 +100,8 @@ export class DashboardPageComponent implements OnInit,OnDestroy
   }
 
 
-  toStatusProduct(product: Products) {
-
+  toStatusProduct(product: Products)
+  {
     this.stateService.setProducts(product);
     this.router.navigate(['/profile/status-product']);
   }
