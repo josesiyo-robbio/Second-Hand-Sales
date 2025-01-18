@@ -10,7 +10,6 @@
 <div class="album py-1 pb-4 bg-body-tertiary ">
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <!-- Repetir las tarjetas de productos usando ngFor -->
       <div class="col " *ngFor="let product of products">
         <div class="card shadow-sm animate__animated animate__zoomInUp">
           <img class="card-img-top" [src]="product.image" alt="Producto">
@@ -20,8 +19,16 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
 
-                <button mat-raised-button (click)="toSellProduct(product)" *ngIf="!product.published">Publish</button>
-                <button mat-stroked-button (click)="toSellProduct(product)" *ngIf="product.published">Status</button>
+
+                <button mat-stroked-button (click)="toSellProduct(product)" *ngIf="!product.published">Status</button>
+
+                <div class="d-flex align-items-center gap-2" *ngIf="product.published">
+                  <button mat-raised-button class="p-1" (click)="toSellProduct(product)">Publish</button>
+                  <button mat-icon-button (click)="deleteProductDialog(product.id)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+
 
               </div>
               <small class="text-body-secondary">{{ product.time }}</small>
