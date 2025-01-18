@@ -1,13 +1,13 @@
-<section class="py-5 text-center container animate__animated animate__fadeInDown">
-  <div class="row py-lg-5">
+<section class="py-3 text-center container animate__animated animate__fadeInDown">
+  <div class="row py-lg-1">
     <div class="col-lg-6 col-md-8 mx-auto">
-      <h1 class="fw-light">Mis Productos</h1>
-      <p class="lead text-body-secondary">Aquí puedes explorar todos los productos disponibles para poner a la venta.</p>
+      <h1 class="fw-light">My Productsss</h1>
+      <p class="lead text-body-secondary">Here you can explore all the products available for sale and to publish</p>
     </div>
   </div>
 </section>
 
-<div class="album py-5 bg-body-tertiary ">
+<div class="album py-1 pb-4 bg-body-tertiary ">
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       <!-- Repetir las tarjetas de productos usando ngFor -->
@@ -15,13 +15,14 @@
         <div class="card shadow-sm animate__animated animate__zoomInUp">
           <img class="card-img-top" [src]="product.image" alt="Producto">
           <div class="card-body">
+            <p class="card-text">{{ product.name }}</p>
             <p class="card-text">{{ product.description }}</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary"
-                        (click)="toSellProduct(product)" *ngIf="!product.published">Publicar</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary"
-                        (click)="toSellProduct(product)" *ngIf="product.published">Estado de la venta</button>
+
+                <button mat-raised-button (click)="toSellProduct(product)" *ngIf="!product.published">Publish</button>
+                <button mat-stroked-button (click)="toSellProduct(product)" *ngIf="product.published">Status</button>
+
               </div>
               <small class="text-body-secondary">{{ product.time }}</small>
             </div>

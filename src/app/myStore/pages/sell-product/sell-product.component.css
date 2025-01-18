@@ -1,14 +1,45 @@
-
+/* Contenedor que ocupa todo el ancho de la pantalla */
+.container {
+  display: flex;
+  justify-content: center; /* Centra la tarjeta horizontalmente */
+  padding-top: 3em;
+  padding-bottom: 3em;
+  width: 100vw; /* Hace que el contenedor ocupe todo el ancho de la ventana */
+}
 
 .example-card {
-  max-width: 500px;
+  width: 100%; /* La tarjeta ocupa todo el ancho disponible */
+  max-width: 100%; /* Se asegura que la tarjeta no tenga límite en el ancho */
+  height: auto; /* Ajuste automático en la altura */
+  max-height: 600px; /* Límite de altura para la tarjeta */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Evita que los elementos se desborden fuera de la tarjeta */
 }
 
+mat-card img {
+  width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+  max-height: 400px; /* Limita la altura de la imagen */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: contain; /* La imagen se ajusta sin cortarse */
+}
+
+mat-card-header {
+  display: flex;
+  align-items: center;
+}
 
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url('https://images.unsplash.com/photo-1525447153550-9b38670d8fcc?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   background-size: cover;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
+mat-card-actions {
+  display: flex;
+  justify-content: flex-start; /* Alinea los botones al inicio */
+  gap: 8px; /* Espacio entre los botones */
 
-
+}

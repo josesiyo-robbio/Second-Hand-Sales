@@ -1,11 +1,21 @@
-.mat-toolbar
-{
-  background: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
+
+.layout-container {
+  height: 100vh; /* Altura total de la ventana */
+  width: 100%;
 }
 
+.drawer-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-.layout-container
-{
-  height: 100vh;
+.main-content {
+  flex: 1;
+  padding: 20px; /* Opcional: para dar espacio al contenido */
+  overflow-y: auto;
+}
+
+.footer {
+  margin-top: auto; /* Empuja el footer al fondo */
 }

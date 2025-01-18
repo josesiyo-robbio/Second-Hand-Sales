@@ -1,3 +1,4 @@
+<!-- app.component.html -->
 <mat-drawer-container class="layout-container" hasBackdrop>
   <!-- Menú lateral -->
   <mat-drawer #drawer mode="push" [opened]="false" [style.width.px]="250">
@@ -5,12 +6,21 @@
   </mat-drawer>
 
   <!-- Contenido principal -->
-  <mat-drawer-content>
+  <mat-drawer-content class="drawer-content">
     <mat-toolbar color="primary">
       <button mat-icon-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
+      <span>Universal Second Hand Store</span>
     </mat-toolbar>
-    <router-outlet></router-outlet>
+
+    <!-- Contenedor principal -->
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <mat-toolbar color="primary" class="footer">
+      <span>Esto es un footer</span>
+    </mat-toolbar>
   </mat-drawer-content>
 </mat-drawer-container>
