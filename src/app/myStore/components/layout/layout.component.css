@@ -19,3 +19,19 @@
 .footer {
   margin-top: auto; /* Empuja el footer al fondo */
 }
+
+
+.header-text {
+  flex: 1;
+  align-items: start;
+  font-size: medium;
+  text-align: start;
+}
+
+
+.footer-text {
+  flex: 1;
+  align-items: end;
+  font-size: small;
+  text-align: end;
+}

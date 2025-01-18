@@ -19,7 +19,7 @@ export class SellProductComponent implements OnInit
 {
   //CLASS PROPERTIES
   public product : Products | null = null;
-  public dialog = inject(MatDialog);
+  public dialog :MatDialog = inject(MatDialog);
   private dialogRef: MatDialogRef<LoadingDialogComponent, any> | undefined;
 
   //CONSTRUCTOR
@@ -32,8 +32,16 @@ export class SellProductComponent implements OnInit
 
 
   //METHODS
-  openDialog()
+  openDialog(productId: number)
   {
+
+    const newState: boolean = true;
+    const products = JSON.parse(localStorage.getItem('products') || '[]');
+    const product = products.flat().find((p: { id: number; }) => p.id === productId);
+    if (product) {
+      product.published = newState;
+      localStorage.setItem('products', JSON.stringify(products));
+    }
 
     this.dialogRef = this.dialog.open(LoadingDialogComponent,
     {
@@ -52,13 +60,23 @@ export class SellProductComponent implements OnInit
 
     this.dialogRef.afterClosed().subscribe(result => {
       this.dialog.open(MessageDialogComponent, {
-        data : {
-          title: 'Exito',
-          message : 'tu producto ha sido publicado',
+        data: {
+          title: 'Éxito',
+          message: 'Tu producto ha sido publicado',
+          onOk: () => {
+            console.log('hola');
+            // Asegúrate de que la navegación esté dentro de la función
+            this.router.navigate(['']);
+          }
         },
-      })
-    })
+      });
+    });
+
+
   }
+
+
+
 
 
 
