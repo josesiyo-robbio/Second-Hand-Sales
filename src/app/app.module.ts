@@ -10,8 +10,8 @@ import {MatListItem, MatNavList} from '@angular/material/list';
 import {MatToolbar} from '@angular/material/toolbar';
 import { LoadingDialogComponent } from './shared/loading-dialog/loading-dialog.component';
 import {SharedModule} from './shared/shared.module';
-import {MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle} from '@angular/material/dialog';
-import {MatProgressSpinner} from '@angular/material/progress-spinner';
+
+import 'animate.css';
 
 @NgModule({
   declarations: [

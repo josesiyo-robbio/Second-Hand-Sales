@@ -5,6 +5,7 @@ import {DashboardPageComponent} from './pages/dashboard-page/dashboard-page.comp
 import {SellProductComponent} from './pages/sell-product/sell-product.component';
 import {NewProductComponent} from './pages/new-product-page/new-product.component';
 import {SellHistoryPageComponent} from './pages/sell-history-page/sell-history-page.component';
+import {MyProfilePageComponent} from './pages/my-profile-page/my-profile-page.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
     { path  :   'dashboard',    component   : DashboardPageComponent  },
     { path  :   'sell-item',    component   : SellProductComponent    },
     { path  :   'new-product',  component   : NewProductComponent     },
-    { path  :   'sell-history',  component   : SellHistoryPageComponent     },
+    { path  :   'sell-history',  component  : SellHistoryPageComponent     },
+    { path  :   'my',  component            : MyProfilePageComponent     },
     { path  :   '**',           redirectTo  : 'dashboard', pathMatch: 'full'           },
     ]}
 ];

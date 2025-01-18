@@ -34,7 +34,12 @@ import {
 } from '@angular/material/table';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatSort, MatSortModule} from '@angular/material/sort';
-
+import { MyProfilePageComponent } from './pages/my-profile-page/my-profile-page.component';
+import {MatGridList, MatGridTile} from '@angular/material/grid-list';
+import {MatCalendar, MatDatepickerModule} from '@angular/material/datepicker';
+import {DateAdapter, MAT_DATE_FORMATS, provideNativeDateAdapter} from '@angular/material/core';
+import {MAT_MOMENT_DATE_FORMATS, MomentDateAdapter} from '@angular/material-moment-adapter';
+import * as moment from 'moment';
 
 @NgModule({
   declarations: [
@@ -43,7 +48,8 @@ import {MatSort, MatSortModule} from '@angular/material/sort';
     DashboardPageComponent,
     SellProductComponent,
     NewProductComponent,
-    SellHistoryPageComponent
+    SellHistoryPageComponent,
+    MyProfilePageComponent
   ],
   imports: [
     MatSidenavModule,
@@ -77,10 +83,22 @@ import {MatSort, MatSortModule} from '@angular/material/sort';
     MatNoDataRow,
     MatTableModule,
     MatPaginatorModule, // Si usas paginación
-    MatSortModule
+    MatSortModule,
+    MatGridList,
+    MatGridTile,
+    MatCalendar,
+    MatDatepickerModule,
+
 
 
   ],
-  exports: []
+  exports: [],
+  providers: [
+    {
+      provide: DateAdapter,
+      useClass: MomentDateAdapter,  // Usa el adaptador de Moment.js
+    },
+    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
+  ],
 })
 export class MyStoreModule { }
