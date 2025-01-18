@@ -7,7 +7,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import {MatSidenavContainer, MatSidenavModule} from '@angular/material/sidenav';
 import {MatListItem, MatNavList} from '@angular/material/list';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
-import {MatButton} from '@angular/material/button';
+import {MatButton, MatFabAnchor, MatFabButton, MatIconButton, MatMiniFabButton} from '@angular/material/button';
 import {MatToolbar} from '@angular/material/toolbar';
 import { SellProductComponent } from './pages/sell-product/sell-product.component';
 import {
@@ -40,6 +40,8 @@ import {MatCalendar, MatDatepickerModule} from '@angular/material/datepicker';
 import {DateAdapter, MAT_DATE_FORMATS, provideNativeDateAdapter} from '@angular/material/core';
 import {MAT_MOMENT_DATE_FORMATS, MomentDateAdapter} from '@angular/material-moment-adapter';
 import * as moment from 'moment';
+import {MatIcon} from '@angular/material/icon';
+import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -88,7 +90,14 @@ import * as moment from 'moment';
     MatGridTile,
     MatCalendar,
     MatDatepickerModule,
-
+    MatIcon,
+    MatMenu,
+    MatMenuItem,
+    MatMenuTrigger,
+    MatIconButton,
+    MatMiniFabButton,
+    MatFabAnchor,
+    MatFabButton,
 
 
   ],

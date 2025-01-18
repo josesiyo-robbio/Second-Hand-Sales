@@ -1,8 +1,20 @@
-<mat-drawer-container class="example-container" autosize>
-  <!-- Sidenav -->
-  <mat-drawer #drawer class="example-sidenav" mode="side">
+
+<mat-toolbar color="primary">
+
+  <button mat-fab extended  (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+    Menu
+  </button>
+</mat-toolbar>
+
+
+<mat-drawer-container class="example-container" >
+  <mat-drawer #drawer class="example-sidenav" mode="side" [style.height]="'100vh'" [style.width]="'250px'">
     <mat-nav-list>
-      <a mat-list-item routerLink="/profile/my">Mi Perfil</a>
+      <mat-list-item routerLink="/profile/my">
+        <mat-icon matListItemIcon>folder</mat-icon>
+        <div matListItemTitle>My Profile</div>
+      </mat-list-item>
       <a mat-list-item routerLink="/profile/dashboard">Mis productos</a>
       <a mat-list-item routerLink="/profile/new-product">Añadir producto</a>
       <a mat-list-item routerLink="/profile/sell-history">Historial de ventas</a>
@@ -12,9 +24,6 @@
     </div>
   </mat-drawer>
 
-  <!-- Contenido principal -->
-  <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">Abrir/Cerrar Menú</button>
-    <router-outlet></router-outlet> <!-- Aquí cargará el contenido de las páginas -->
-  </div>
+
 </mat-drawer-container>
+

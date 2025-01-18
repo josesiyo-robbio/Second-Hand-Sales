@@ -9,9 +9,16 @@ background-color: #712cf9;
 }
 
 
+.height
+{
+  height: 100vh;
+}
 
 
-
+.custom-card
+{
+  padding-left: 10em;
+}
 
 
 
