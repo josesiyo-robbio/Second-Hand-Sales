@@ -1,4 +1,16 @@
+<mat-drawer-container class="layout-container" hasBackdrop>
+  <!-- Menú lateral -->
+  <mat-drawer #drawer mode="push" [opened]="false" [style.width.px]="250">
+    <myStore-component-sidebar></myStore-component-sidebar>
+  </mat-drawer>
 
-<myStore-component-sidebar></myStore-component-sidebar>
-<router-outlet></router-outlet>
-
+  <!-- Contenido principal -->
+  <mat-drawer-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,29 +1,18 @@
-
-<mat-toolbar color="primary">
-
-  <button mat-fab extended  (click)="drawer.toggle()">
-    <mat-icon>menu</mat-icon>
-    Menu
-  </button>
-</mat-toolbar>
-
-
-<mat-drawer-container class="example-container" >
-  <mat-drawer #drawer class="example-sidenav" mode="side" [style.height]="'100vh'" [style.width]="'250px'">
-    <mat-nav-list>
-      <mat-list-item routerLink="/profile/my">
-        <mat-icon matListItemIcon>folder</mat-icon>
-        <div matListItemTitle>My Profile</div>
-      </mat-list-item>
-      <a mat-list-item routerLink="/profile/dashboard">Mis productos</a>
-      <a mat-list-item routerLink="/profile/new-product">Añadir producto</a>
-      <a mat-list-item routerLink="/profile/sell-history">Historial de ventas</a>
-    </mat-nav-list>
-    <div style="margin-top: 20px;">
-      <button mat-raised-button color="primary" (click)="drawer.toggle()">Cerrar Menú</button>
-    </div>
-  </mat-drawer>
-
-
-</mat-drawer-container>
-
+<mat-nav-list>
+  <mat-list-item routerLink="/profile/my">
+    <mat-icon matListItemIcon>person</mat-icon>
+    <div matListItemTitle>Profile</div>
+  </mat-list-item>
+  <mat-list-item routerLink="/profile/dashboard">
+    <mat-icon matListItemIcon>loyalty</mat-icon>
+    <div matListItemTitle>My Products</div>
+  </mat-list-item>
+  <mat-list-item routerLink="/profile/new-product">
+    <mat-icon matListItemIcon>add</mat-icon>
+    <div matListItemTitle>Add Product</div>
+  </mat-list-item>
+  <mat-list-item routerLink="/profile/sales-history">
+    <mat-icon matListItemIcon>credit_card_clock</mat-icon>
+    <div matListItemTitle>Sales History</div>
+  </mat-list-item>
+</mat-nav-list>
