@@ -11,7 +11,10 @@ background-color: #712cf9;
 
 .height
 {
-  height: 100vh;
+  padding-top: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 2em;
 }
 
 
