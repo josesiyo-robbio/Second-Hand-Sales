@@ -6,8 +6,14 @@ import {Products} from '../interfaces/products';
 })
 export class StateService
 {
+
   //CLASS PROPERTIES
   private selectedProduct : Products  | null = null;
+
+
+
+  //CONSTRUCTOR (NA)
+
 
 
   //GETTERS & SETTERS
@@ -21,5 +27,10 @@ export class StateService
   {
     return this.selectedProduct;
   }
+
+
+
+  //METHODS (NA)
+  //LIFECYCLE HOOKS (NA)
 
 }

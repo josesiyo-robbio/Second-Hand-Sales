@@ -40,6 +40,10 @@ export class SellProductComponent implements OnInit
 
 
 
+  //GETTERS & SETTERS (NA)
+
+
+
   //METHODS
   openDialog(productId: string)
   {
@@ -47,19 +51,19 @@ export class SellProductComponent implements OnInit
     const newState: boolean = true;
     const products = JSON.parse(localStorage.getItem('products') || '[]');
     const product = products.flat().find((p: { id: string; }) => p.id === productId);
-    if (product) 
+    if (product)
     {
       product.published = newState;
       localStorage.setItem('products', JSON.stringify(products));
     }
 
     this.dialogRef = this.dialog.open(LoadingDialogComponent,
-    {
-      data: {
-        title: 'Publishing product...',
-      },
-      disableClose: true,
-    });
+      {
+        data: {
+          title: 'Publishing product...',
+        },
+        disableClose: true,
+      });
 
     timer(1000).subscribe(() => {
       if (this.dialogRef)
@@ -80,7 +84,6 @@ export class SellProductComponent implements OnInit
         },
       });
     });
-
   }
 
 

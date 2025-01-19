@@ -1,5 +1,7 @@
 import {Component, model} from '@angular/core';
 
+
+
 @Component({
   selector: 'app-my-profile-page',
   standalone: false,
@@ -9,6 +11,7 @@ import {Component, model} from '@angular/core';
 })
 export class MyProfilePageComponent
 {
+  //CLASS PROPERTIES
   selected = model<Date | null>(null);
   public avatarUrl: string = 'https://images.unsplash.com/photo-1525447153550-9b38670d8fcc?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
   public shopDescription : string = `Welcome to our second-hand console store, where gaming enthusiasts can find a wide
@@ -23,4 +26,12 @@ export class MyProfilePageComponent
 
   public onTimeDelivery : string =  'On-time deliveries ';
   public positiveReviews : string = 'Positive reviews';
+
+
+
+  //CONSTRUCTOR (NA)
+  //GETTERS & SETTERS (NA)
+  //METHODS (NA)
+  //LIFECYCLE HOOKS (NA)
+
 }

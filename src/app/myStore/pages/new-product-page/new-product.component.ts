@@ -6,6 +6,8 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {LoadingDialogComponent} from '../../../shared/loading-dialog/loading-dialog.component';
 import {Router} from '@angular/router';
 
+
+
 @Component({
   selector: 'myStore-new-product-page',
   standalone: false,
@@ -15,11 +17,15 @@ import {Router} from '@angular/router';
 })
 export class NewProductComponent
 {
+  //CLASS PROPERTIES
   productForm: FormGroup;
   private dialogRef: MatDialogRef<LoadingDialogComponent, any> | undefined;
   public dialog :MatDialog = inject(MatDialog);
 
-  constructor(private fb: FormBuilder, private router: Router,) 
+
+
+  //CONSTRUCTOR
+  constructor(private fb: FormBuilder, private router: Router,)
   {
     this.productForm = this.fb.group({
       name        :   ['', Validators.required],
@@ -30,16 +36,22 @@ export class NewProductComponent
   }
 
 
-  onSubmit(): void 
+
+  //GETTERS & SETTERS (NA)
+
+
+
+  //METHODS
+  onSubmit(): void
   {
-    if (this.productForm.invalid) 
+    if (this.productForm.invalid)
     {
       return;
     }
 
     const productContainer = JSON.parse(localStorage.getItem('products') || '[]');
 
-    if (!Array.isArray(productContainer) || productContainer.length === 0) 
+    if (!Array.isArray(productContainer) || productContainer.length === 0)
     {
       console.error('El formato del localStorage no es válido.');
       return;
@@ -47,16 +59,16 @@ export class NewProductComponent
 
     const products = productContainer[0];
 
-    const newProduct: Products = 
-    {
-      id          :   this.generateId(), 
-      name        :   this.productForm.value.name,
-      price       :   this.productForm.value.price,
-      image       :   this.productForm.value.image,
-      description :   this.productForm.value.description,
-      time        :   new Date().toLocaleDateString('en-CA'), 
-      published   :   false,
-    };
+    const newProduct: Products =
+      {
+        id          :   this.generateId(),
+        name        :   this.productForm.value.name,
+        price       :   this.productForm.value.price,
+        image       :   this.productForm.value.image,
+        description :   this.productForm.value.description,
+        time        :   new Date().toLocaleDateString('en-CA'),
+        published   :   false,
+      };
 
     products.push(newProduct);
 
@@ -64,20 +76,24 @@ export class NewProductComponent
 
     this.productForm.reset();
 
-    this.dialogRef = this.dialog.open(MessageDialogComponent, 
-    {
-      data: {
-        title: 'Success',
-        message: 'The product has been created successfully',
-        onOk: () => this.router.navigate(['']),
-      },
-    });
+    this.dialogRef = this.dialog.open(MessageDialogComponent,
+      {
+        data: {
+          title: 'Success',
+          message: 'The product has been created successfully',
+          onOk: () => this.router.navigate(['']),
+        },
+      });
   }
 
 
-
-  private generateId(): string 
+  private generateId(): string
   {
-    return crypto.randomUUID(); 
+    return crypto.randomUUID();
   }
+
+
+
+  //LIFECYCLE HOOKS (NA)
+
 }

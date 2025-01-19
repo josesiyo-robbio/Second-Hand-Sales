@@ -21,6 +21,8 @@ export class StatusProductPageComponent implements OnInit
   public dialog :MatDialog = inject(MatDialog);
   private dialogRef: MatDialogRef<LoadingDialogComponent, any> | undefined;
 
+
+
   //CONSTRUCTOR
   constructor
   (
@@ -28,6 +30,11 @@ export class StatusProductPageComponent implements OnInit
     private router: Router,
   )
   {}
+
+
+
+  //GETTERS & SETTERS (NA)
+
 
 
   //METHODS
@@ -69,7 +76,7 @@ export class StatusProductPageComponent implements OnInit
   }
 
 
-  
+
   //LIFECYCLE HOOKS
   ngOnInit(): void
   {

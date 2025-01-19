@@ -9,6 +9,11 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class MessageDialogComponent
 {
+  //CLASS PROPERTIES (NA)
+
+
+
+  //CONSTRUCTOR
   constructor
   (
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -23,6 +28,12 @@ export class MessageDialogComponent
   }
 
 
+
+  //GETTERS & SETTERS (NA)
+
+
+
+  //METHODS
   onConfirm()
   {
     if (this.data.onOk)
@@ -31,4 +42,9 @@ export class MessageDialogComponent
     }
     this.dialogRef.close();
   }
+
+
+
+//LIFECYCLE HOOKS (NA)
+
 }

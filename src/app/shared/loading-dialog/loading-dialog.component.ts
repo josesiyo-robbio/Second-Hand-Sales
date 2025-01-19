@@ -10,15 +10,26 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
   styleUrl      : './loading-dialog.component.css',
 
 })
-export class LoadingDialogComponent 
+export class LoadingDialogComponent
 {
-    constructor(@Inject(MAT_DIALOG_DATA) public data: any) 
+  //CLASS PROPERTIES (NA)
+
+
+
+  //CONSTRUCTOR
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any)
+  {
+    if (!data)
     {
-      if (!data) 
-      {
-        console.error('No se pasaron datos al diálogo');
-        this.data = { title: 'Error', message: 'No se proporcionaron datos.' }; 
-      }
+      console.error('No data was passed to the dialogue');
+      this.data = { title: 'Error', message: 'No data provided.' };
     }
+  }
+
+
+
+  //GETTERS & SETTERS (NA)
+  //METHODS (NA)
+  //LIFECYCLE HOOKS (NA)
 
 }
