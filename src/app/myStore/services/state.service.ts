@@ -14,7 +14,6 @@ export class StateService
   setProducts(product : Products) : void
   {
     this.selectedProduct = product;
-
   }
 
 
@@ -22,6 +21,5 @@ export class StateService
   {
     return this.selectedProduct;
   }
-
 
 }

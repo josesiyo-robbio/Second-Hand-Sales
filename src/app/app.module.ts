@@ -10,30 +10,25 @@ import {MatListItem, MatNavList} from '@angular/material/list';
 import {MatToolbar} from '@angular/material/toolbar';
 import { LoadingDialogComponent } from './shared/loading-dialog/loading-dialog.component';
 import {SharedModule} from './shared/shared.module';
-
 import 'animate.css';
 
-@NgModule({
-  declarations: [
-    AppComponent,
 
-  ],
-  imports: [
-    BrowserModule,
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: 
+  [
     AppRoutingModule,
+    BrowserModule,
     MatButton,
-    MatSidenavContainer,
-    MatNavList,
     MatListItem,
+    MatNavList,
+    MatSidenavContainer,
     MatSidenavModule,
     MatToolbar,
     SharedModule,
-
-
   ],
-  providers: [
-    provideAnimationsAsync()
-  ],
+  providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

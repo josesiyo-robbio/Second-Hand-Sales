@@ -2,72 +2,71 @@
 
 
 
-img {
-  width: 100%;
-  height: 80%;
+img 
+{
+  width   : 100%;
+  height  : 80%;
 }
+
 
 .person-name
 {
-  align-items: end;
-  text-align: end;
+  align-items : end;
+  text-align  : end;
 }
 
 
 .bg-green
 {
-  color: #030303;
-  background-color: #C0EFAD;
+  color             : #030303;
+  background-color  : #C0EFAD;
 }
+
 
 .bg-yellow
 {
-  color: #030303;
-  background-color: #EFE58B;
+  color             : #030303;
+  background-color  : #EFE58B;
 }
 
 
 .bg-red
 {
-  color: #030303;
-  background-color: #d38686;
+  color             : #030303;
+  background-color  : #d38686;
 }
 
 .bg-blue
 {
-  color: #030303;
-  background-color: #C7E6FF;
+  color             : #030303;
+  background-color  : #C7E6FF;
 }
 
 .bg-card
 {
-  background-color: #5F7C8B;
+  background-color  : #5F7C8B;
 }
 
 
 .imageStyle
 {
-  border-radius: 5%;
+  border-radius : 5%;
 }
 
 .border
 {
-    border-radius: 15px;
-    margin: 0.5em;
+    border-radius : 15px;
+    margin        : 0.5em;
 }
+
+
+
 
 @media (max-width: 768px)
 {
-  .profile-card
-  {
-
-  }
-
   .store-card
   {
-    padding-top: 0.5em;
-    padding-bottom: 1em;
-
+    padding-top     : 0.5em;
+    padding-bottom  : 1em;
   }
-
 }

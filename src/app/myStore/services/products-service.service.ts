@@ -8,15 +8,16 @@ import {Products} from '../interfaces/products';
 })
 export class ProductsService
 {
-  private products: Products[] = [
+  private products: Products[] = 
+  [
     {
-      id: '1',
-      price : 50,
-      name : 'PS VITA SLIM',
-      image: 'https://img1.kakaku.k-img.com/images/maga/icv/sp828/3056/woman_rev449_img01_l.jpg',
-      description: 'Este es un producto increíble con todas las características que buscas.',
-      time: '10 Minutes Ago',
-      published : false,
+      id          :   '1',
+      price       :   50,
+      name        :   'PS VITA SLIM',
+      image       :   'https://img1.kakaku.k-img.com/images/maga/icv/sp828/3056/woman_rev449_img01_l.jpg',
+      description :   'Este es un producto increíble con todas las características que buscas.',
+      time        :   '10 Minutes Ago',
+      published   :   false,
     },
     {
       id: '2',

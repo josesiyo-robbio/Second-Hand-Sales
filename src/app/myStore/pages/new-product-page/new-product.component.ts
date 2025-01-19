@@ -19,68 +19,65 @@ export class NewProductComponent
   private dialogRef: MatDialogRef<LoadingDialogComponent, any> | undefined;
   public dialog :MatDialog = inject(MatDialog);
 
-  constructor(private fb: FormBuilder, private router: Router,) {
-    // Crea el formulario con los campos necesarios
+  constructor(private fb: FormBuilder, private router: Router,) 
+  {
     this.productForm = this.fb.group({
-      name: ['', Validators.required],
-      price: [0, [Validators.required, Validators.min(0)]],
-      image: ['', Validators.required],
-      description: ['', Validators.required]
+      name        :   ['', Validators.required],
+      price       :   [0, [Validators.required, Validators.min(0)]],
+      image       :   ['', Validators.required],
+      description :   ['', Validators.required]
     });
   }
 
-  // Método para manejar el envío del formulario
-  onSubmit(): void {
-    if (this.productForm.invalid) {
+
+  onSubmit(): void 
+  {
+    if (this.productForm.invalid) 
+    {
       return;
     }
 
-    // Obtenemos el array principal del localStorage
     const productContainer = JSON.parse(localStorage.getItem('products') || '[]');
 
-    // Validamos que sea un array válido y contenga al menos un índice
-    if (!Array.isArray(productContainer) || productContainer.length === 0) {
+    if (!Array.isArray(productContainer) || productContainer.length === 0) 
+    {
       console.error('El formato del localStorage no es válido.');
       return;
     }
 
-    // Accedemos al array de productos en el índice 0
     const products = productContainer[0];
 
-    // Creamos un nuevo producto con los valores del formulario
-    const newProduct: Products = {
-      id: this.generateId(), // Generamos un ID único basado en el array existente
-      name: this.productForm.value.name,
-      price: this.productForm.value.price,
-      image: this.productForm.value.image,
-      description: this.productForm.value.description,
-      time: new Date().toLocaleDateString('en-CA'), // Formato 'YYYY-MM-DD'
-      published: false,
+    const newProduct: Products = 
+    {
+      id          :   this.generateId(), 
+      name        :   this.productForm.value.name,
+      price       :   this.productForm.value.price,
+      image       :   this.productForm.value.image,
+      description :   this.productForm.value.description,
+      time        :   new Date().toLocaleDateString('en-CA'), 
+      published   :   false,
     };
 
-    // Agregamos el nuevo producto al array de productos
     products.push(newProduct);
 
-    // Guardamos el array principal actualizado en el localStorage
     localStorage.setItem('products', JSON.stringify(productContainer));
 
-    // Reiniciamos el formulario y mostramos el mensaje de éxito
     this.productForm.reset();
-    // Reiniciamos el formulario y mostramos el mensaje de éxito
-    this.productForm.reset();
-    this.dialogRef = this.dialog.open(MessageDialogComponent, {
+
+    this.dialogRef = this.dialog.open(MessageDialogComponent, 
+    {
       data: {
-        title: 'Éxito',
-        message: 'Tu producto ha sido publicado',
+        title: 'Success',
+        message: 'The product has been created successfully',
         onOk: () => this.router.navigate(['']),
       },
     });
-
   }
 
 
 
-  private generateId(): string {
-    return crypto.randomUUID(); // Genera un identificador único universal (UUID)
+  private generateId(): string 
+  {
+    return crypto.randomUUID(); 
   }
 }

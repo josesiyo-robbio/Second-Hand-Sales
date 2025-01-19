@@ -11,18 +11,20 @@ import {HistoryProduct} from '../../interfaces/history-product';
   standalone : false,
   styleUrls: ['./sell-history-page.component.css']
 })
-export class SellHistoryPageComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'price', 'date', 'status'];
-  dataSource: MatTableDataSource<HistoryProduct>;
-  pageSizeOptions: number[] = [5, 10, 25];  // Opciones predeterminadas
-  paginatorPageSize: number = 5;  // Tamaño de página predeterminado
+export class SellHistoryPageComponent implements AfterViewInit 
+{
+  public displayedColumns: string[] = ['id', 'name', 'price', 'date', 'status'];
+  public dataSource: MatTableDataSource<HistoryProduct>;
+  public pageSizeOptions: number[] = [5, 10, 25];  
+  public paginatorPageSize: number = 5;  
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor() {
-    // Datos de ejemplo
-    const products = [
+  constructor() 
+  {
+    const products = 
+    [
       { id: '1', name: 'PS5', price: 499, date: '2025-01-01', status: 'Sold' },
       { id: '2', name: 'Xbox Series X', price: 499, date: '2025-01-02', status: 'Sold' },
       { id: '3', name: 'Nintendo Switch', price: 299, date: '2025-01-03', status: 'Sold' },
@@ -30,38 +32,40 @@ export class SellHistoryPageComponent implements AfterViewInit {
       { id: '5', name: 'Oculus Quest 2', price: 299, date: '2025-01-05', status: 'Sold' }
     ];
 
-    // Asignar los productos a la fuente de datos
     this.dataSource = new MatTableDataSource(products);
   }
 
-  ngAfterViewInit() {
-    // Después de inicializar las vistas, se asignan el paginator y sort
+  ngAfterViewInit() 
+  {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-
-    // Ajustamos dinámicamente las opciones del paginator según la cantidad de productos
     this.adjustPaginator();
   }
 
-  // Método para ajustar las opciones del paginator dinámicamente
-  private adjustPaginator() {
+
+  private adjustPaginator() 
+  {
     const numberOfItems = this.dataSource.data.length;
 
-    // Si hay menos de 5 productos, cambiamos las opciones de tamaño de página
-    if (numberOfItems < 5) {
-      this.pageSizeOptions = [numberOfItems];  // Solo mostramos el tamaño correcto
-      this.paginatorPageSize = numberOfItems;  // Ajustamos el tamaño de la página
-    } else {
-      this.pageSizeOptions = [5, 10, 25];  // Opciones predeterminadas cuando hay más de 5 productos
-      this.paginatorPageSize = 5;  // Tamaño de página predeterminado
+    if (numberOfItems < 5) 
+    {
+      this.pageSizeOptions = [numberOfItems]; 
+      this.paginatorPageSize = numberOfItems; 
+    } 
+    else 
+    {
+      this.pageSizeOptions = [5, 10, 25];  
+      this.paginatorPageSize = 5;  
     }
   }
 
-  applyFilter(event: Event) {
+  applyFilter(event: Event) 
+  {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
+    if (this.dataSource.paginator) 
+    {
       this.dataSource.paginator.firstPage();
     }
   }

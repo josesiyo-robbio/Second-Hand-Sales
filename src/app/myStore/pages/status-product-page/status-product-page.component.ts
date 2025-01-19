@@ -62,25 +62,14 @@ export class StatusProductPageComponent implements OnInit
         data: {
           title: 'Éxito',
           message: 'Tu producto ha sido publicado',
-          onOk: () => {
-            console.log('hola');
-            // Asegúrate de que la navegación esté dentro de la función
-            this.router.navigate(['']);
-          }
+          onOk: () => { this.router.navigate(['']);}
         },
       });
     });
-
-
   }
 
 
-
-
-
-
-
-
+  
   //LIFECYCLE HOOKS
   ngOnInit(): void
   {
@@ -91,6 +80,5 @@ export class StatusProductPageComponent implements OnInit
     }
     console.log(this.stateService.getProduct());
   }
-
 
 }

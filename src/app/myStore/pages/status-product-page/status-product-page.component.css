@@ -3,23 +3,27 @@
 
 .product-card
 {
-  align-items: center;
+  align-items : center;
 }
+
 
 img[mat-card-image]
 {
-  max-width: 500px;
-  max-height: 900px;
+  max-width   : 500px;
+  max-height  : 900px;
 }
 
 
-mat-card-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+mat-card-actions 
+{
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
 }
 
-@media (max-width: 768px)
+
+
+@media (max-width: 768px) 
 {
   img[mat-card-image]
   {
@@ -27,24 +31,25 @@ mat-card-actions {
     max-height: 700px;
   }
 
+
   .store-card
   {
-    padding-top: 0.5em;
+    padding-top : 0.5em;
   }
 
-  mat-card-actions button {
-    font-size: 0.8em;
+  mat-card-actions button 
+  {
+    font-size : 0.8em;
   }
-
-
-
 }
 
 
 
 
 
-body{margin-top:20px;}
+body {
+  margin-top: 20px;
+}
 
 .steps {
   border: 1px solid #e7e7e7
@@ -169,24 +174,28 @@ body{margin-top:20px;}
 @media (max-width: 575.98px) {
   .steps-header {
     display: none
-
   }
+
   .steps-body,
   .step {
     display: block;
 
 
   }
+
   .step {
     border-right: 0;
     border-bottom: 1px dashed #e7e7e7
   }
+
   .step:last-child {
     border-bottom: 0
   }
+
   .has-indicator {
     padding: 1rem .75rem
   }
+
   .has-indicator .step-indicator {
     display: inline-block;
     position: static;
@@ -199,13 +208,13 @@ body{margin-top:20px;}
   background-color: #f7f7f7 !important;
 }
 
-.progress-bar
-{
+.progress-bar {
   background-color: #BE0022 !important;
 }
 
-.steps {
-  border: 2px solid #804149; /* Aquí puedes poner el color que desees */
-  padding: 10px; /* Agrega algo de espacio interno si lo necesitas */
-  border-radius: 8px; /* Opcional: para bordes redondeados */
+.steps 
+{
+  border: 2px solid #804149;
+  padding: 10px;
+  border-radius: 8px;
 }

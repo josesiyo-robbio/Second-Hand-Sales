@@ -3,39 +3,43 @@
 
 .product-card
 {
-  align-items: center;
+  align-items : center;
 }
+
 
 img[mat-card-image]
 {
-  max-width: 500px;
-  max-height: 900px;
+  max-width   : 500px;
+  max-height  : 900px;
 }
 
 
-mat-card-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+mat-card-actions 
+{
+  display           :   flex;
+  justify-content   :   center;
+  align-items       :   center;
 }
+
+
 
 @media (max-width: 768px)
 {
   img[mat-card-image]
   {
-    max-width: 300px;
-    max-height: 700px;
+    max-width   : 300px;
+    max-height  : 700px;
   }
+
 
   .store-card
   {
-    padding-top: 0.5em;
-  }
-
-  mat-card-actions button {
-    font-size: 0.8em;
+    padding-top : 0.5em;
   }
 
 
-
+  mat-card-actions button 
+  {
+    font-size : 0.8em;
+  }
 }

@@ -1,11 +1,9 @@
-<!-- app.component.html -->
 <mat-drawer-container class="layout-container" hasBackdrop>
-  <!-- Menú lateral -->
+
   <mat-drawer #drawer mode="push" [opened]="false" [style.width.px]="250">
     <myStore-component-sidebar></myStore-component-sidebar>
   </mat-drawer>
 
-  <!-- Contenido principal -->
   <mat-drawer-content class="drawer-content">
     <mat-toolbar color="primary">
       <button mat-icon-button (click)="drawer.toggle()">
@@ -14,7 +12,6 @@
       <span class="header-text">Universal Second Hand Store</span>
     </mat-toolbar>
 
-    <!-- Contenedor principal -->
     <div class="main-content">
       <router-outlet></router-outlet>
     </div>

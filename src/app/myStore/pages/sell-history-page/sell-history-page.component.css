@@ -1,28 +1,43 @@
-table {
-  width: 100%;
+
+
+
+table 
+{
+  width : 100%;
 }
 
-.mat-mdc-form-field {
-  font-size: 14px;
-  width: 100%;
+
+.mat-mdc-form-field 
+{
+  font-size : 14px;
+  width     : 100%;
 }
 
-td, th {
-  width: 25%;
+
+td, th 
+{
+  width : 25%;
 }
 
-.table-container {
-  overflow-x: auto;
+
+.table-container 
+{
+  overflow-x  : auto;
 }
 
-.mat-paginator {
-  margin-top: 16px;
+
+.mat-paginator 
+{
+  margin-top  : 16px;
 }
 
-/* Ajustar celdas para pantallas pequeñas */
-@media (max-width: 600px) {
-  td, th {
-    width: auto;
-    word-wrap: break-word;
+
+
+@media (max-width: 600px) 
+{
+  td, th 
+  {
+    width     : auto;
+    word-wrap : break-word;
   }
 }

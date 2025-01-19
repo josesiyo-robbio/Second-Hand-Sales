@@ -1,12 +1,13 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 
-@Component({
-  selector: 'app-loading-dialog',
-  standalone: false,
 
-  templateUrl: './loading-dialog.component.html',
-  styleUrl: './loading-dialog.component.css',
+
+@Component({
+  selector      : 'app-loading-dialog',
+  standalone    : false,
+  templateUrl   : './loading-dialog.component.html',
+  styleUrl      : './loading-dialog.component.css',
 
 })
 export class LoadingDialogComponent 

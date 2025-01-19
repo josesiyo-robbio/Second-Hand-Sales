@@ -1,13 +1,14 @@
-.loading-dialog {
-  display: flex; /* Activa Flexbox */
-  flex-direction: column; /* Alinea el spinner y el texto en columna */
-  justify-content: center; /* Centra verticalmente */
-  align-items: center; /* Centra horizontalmente */
-
-  text-align: center; /* Centra el texto */
+.loading-dialog 
+{
+  display         : flex; 
+  flex-direction  : column; 
+  justify-content : center; 
+  align-items     : center; 
+  text-align      : center; 
 }
 
 
-mat-spinner {
+mat-spinner 
+{
   margin: 3em;
 }

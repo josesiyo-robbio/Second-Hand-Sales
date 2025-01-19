@@ -37,13 +37,16 @@ export class DashboardPageComponent implements OnInit,OnDestroy
 
 
   //METHODS
-  ngOnInit(): void {
+  ngOnInit(): void 
+  {
     this.productsSubscription = this.productsService.getProducts().subscribe(
       (data) => {
-        if (data && Array.isArray(data)) {
+        if (data && Array.isArray(data)) 
+        {
           this.products = data;
-          console.log('Productos cargados:', this.products);
-        } else {
+        } 
+        else 
+        {
           console.warn('No se encontraron productos válidos.');
           this.products = [];
         }
@@ -56,9 +59,10 @@ export class DashboardPageComponent implements OnInit,OnDestroy
   }
 
 
-  ngOnDestroy(): void {
-    // Limpiar la suscripción cuando el componente se destruya
-    if (this.productsSubscription) {
+  ngOnDestroy(): void 
+  {
+    if (this.productsSubscription) 
+    {
       this.productsSubscription.unsubscribe();
     }
   }
@@ -70,6 +74,7 @@ export class DashboardPageComponent implements OnInit,OnDestroy
     this.router.navigate(['/profile/sell-item']);
   }
 
+
   deleteProductDialog(productId : string): void
   {
     this.dialog.open(MessageDialogComponent,
@@ -79,24 +84,13 @@ export class DashboardPageComponent implements OnInit,OnDestroy
         message: 'Are you sure to delete the product?',
         onOk: () =>
         {
-          console.log('Deletar producto');
-          console.log('ID recibido:', productId);
-
           const products = JSON.parse(localStorage.getItem('products') || '[]')[0] || [];
-
-          console.log('Productos antes de eliminar:', products);
-
           const updatedProducts = products.filter((product: { id: string }) => product.id !== productId.toString());
-
-          console.log('Productos después de eliminar:', updatedProducts);
-
           localStorage.setItem('products', JSON.stringify([updatedProducts]));
           window.location.reload();
-
         }
       },
     });
-
   }
 
 

@@ -1,19 +1,13 @@
-
-
-
 <div class="animate__animated animate__fadeInDown">
 
   <div class="row no-gutters ">
-    <!-- Columna 1 para la primera tarjeta -->
     <div class="col-md-6 col-lg-6">
       <mat-card class="product-card" appearance="outlined">
         <mat-card-header>
-
         </mat-card-header>
         <img mat-card-image src="{{product?.image}}" alt="product">
         <mat-card-content>
         </mat-card-content>
-
       </mat-card>
     </div>
 
@@ -27,18 +21,14 @@
           <div class="price">
             <span>Price ${{product?.price}}</span>
           </div>
-
-
           <div class="d-flex flex-row justify-content-evenly flex-wrap">
-
-
           </div>
         </mat-card-content>
       </mat-card>
 
-      <div class="box p-1" >
-
+      <div class="box p-1">
       </div>
+
       <mat-card class="example-card" appearance="outlined">
         <mat-card-content>
           <h3 class="display-7">{{instructions}}</h3>
@@ -51,8 +41,8 @@
                 <img mat-card-image [src]="ebayImage" alt="store-image">
                 <mat-card-content>
                 </mat-card-content>
-                <mat-card-actions >
-                  <button mat-stroked-button  (click)="openDialog(product!.id)">Publish</button>
+                <mat-card-actions>
+                  <button mat-stroked-button (click)="openDialog(product!.id)">Publish</button>
                 </mat-card-actions>
               </mat-card>
 
@@ -74,7 +64,7 @@
                 <mat-card-content>
                 </mat-card-content>
                 <mat-card-actions>
-                  <button mat-stroked-button  (click)="openDialog(product!.id)">Publish</button>
+                  <button mat-stroked-button (click)="openDialog(product!.id)">Publish</button>
                 </mat-card-actions>
               </mat-card>
             </div>
@@ -82,10 +72,6 @@
         </mat-card-content>
       </mat-card>
     </div>
-
-
-
-
 
   </div>
 </div>
