@@ -13,14 +13,16 @@ const routes: Routes = [
     path: '', component: LayoutComponent,
     children:
     [
-    { path  :   'dashboard',    component   : DashboardPageComponent  },
-    { path  :   'sell-item',    component   : SellProductComponent    },
-    { path  :   'new-product',  component   : NewProductComponent     },
-      { path  :   'status-product',  component   : StatusProductPageComponent     },
-    { path  :   'sell-history',  component  : SellHistoryPageComponent     },
-    { path  :   'my',  component            : MyProfilePageComponent     },
-    { path  :   '**',           redirectTo  : 'dashboard', pathMatch: 'full'           },
-    ]}
+    { path  :   'dashboard',        component   :   DashboardPageComponent        },
+    { path  :   'sell-item',        component   :   SellProductComponent          },
+    { path  :   'new-product',      component   :   NewProductComponent           },
+    { path  :   'status-product',   component   :   StatusProductPageComponent    },
+    { path  :   'sell-history',     component   :   SellHistoryPageComponent      },
+    { path  :   'my',               component   :   MyProfilePageComponent        },
+
+    { path  :   '**',               redirectTo  : 'dashboard', pathMatch: 'full'  },
+    ]
+  }
 ];
 
 @NgModule({
