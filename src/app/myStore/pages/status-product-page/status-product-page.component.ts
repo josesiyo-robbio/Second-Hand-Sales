@@ -17,9 +17,9 @@ import {MessageDialogComponent} from '../../../shared/message-dialog/message-dia
 export class StatusProductPageComponent implements OnInit
 {
   //CLASS PROPERTIES
-  public product : Products | null = null;
-  public dialog :MatDialog = inject(MatDialog);
-  private dialogRef: MatDialogRef<LoadingDialogComponent, any> | undefined;
+  public  product   : Products | null = null;
+  public  dialog    : MatDialog = inject(MatDialog);
+  private dialogRef : MatDialogRef<LoadingDialogComponent, any> | undefined;
 
 
 
@@ -38,7 +38,7 @@ export class StatusProductPageComponent implements OnInit
 
 
   //METHODS
-  openDialog(productId: string)
+  public openDialog(productId: string)
   {
 
     const newState: boolean = true;

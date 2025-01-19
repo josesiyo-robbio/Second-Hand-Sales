@@ -42,7 +42,7 @@ export class NewProductComponent
 
 
   //METHODS
-  onSubmit(): void
+  public onSubmit(): void
   {
     if (this.productForm.invalid)
     {

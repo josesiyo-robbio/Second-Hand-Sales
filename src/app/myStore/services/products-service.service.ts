@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import {Products} from '../interfaces/products';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -82,7 +83,7 @@ export class ProductsService
 
 
   //METHODS
-  loadProducts()
+  private loadProducts()
   {
     const storedProducts = localStorage.getItem('products');
     if(!storedProducts)
@@ -92,7 +93,7 @@ export class ProductsService
   }
 
 
-  getProducts(): Observable<Products[]>
+  public getProducts(): Observable<Products[]>
   {
     const storedProducts = localStorage.getItem('products');
     try

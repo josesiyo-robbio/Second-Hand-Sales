@@ -34,7 +34,7 @@ export class MessageDialogComponent
 
 
   //METHODS
-  onConfirm()
+  public onConfirm()
   {
     if (this.data.onOk)
     {

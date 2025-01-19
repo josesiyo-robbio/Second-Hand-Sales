@@ -20,7 +20,7 @@ export class DashboardPageComponent implements OnInit,OnDestroy
 {
   //CLASS PROPERTIES
   public dialog :MatDialog = inject(MatDialog);
-  products: Products[] = [];
+  public products: Products[] = [];
   private productsSubscription: Subscription;
 
 
@@ -41,14 +41,14 @@ export class DashboardPageComponent implements OnInit,OnDestroy
 
 
   //METHODS
-  toSellProduct(product : Products): void
+  public toSellProduct(product : Products): void
   {
     this.stateService.setProducts(product);
     this.router.navigate(['/profile/sell-item']);
   }
 
 
-  deleteProductDialog(productId : string): void
+  public deleteProductDialog(productId : string): void
   {
     this.dialog.open(MessageDialogComponent,
       {
@@ -67,7 +67,7 @@ export class DashboardPageComponent implements OnInit,OnDestroy
   }
 
 
-  toStatusProduct(product: Products)
+  public toStatusProduct(product: Products)
   {
     this.stateService.setProducts(product);
     this.router.navigate(['/profile/status-product']);
