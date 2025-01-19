@@ -53,7 +53,7 @@ export class SellProductComponent implements OnInit
     this.dialogRef = this.dialog.open(LoadingDialogComponent,
     {
       data: {
-        title: 'Publicando producto',
+        title: 'Publishing product...',
       },
       disableClose: true,
     });
@@ -68,11 +68,10 @@ export class SellProductComponent implements OnInit
     this.dialogRef.afterClosed().subscribe(result => {
       this.dialog.open(MessageDialogComponent, {
         data: {
-          title: 'Éxito',
-          message: 'Tu producto ha sido publicado',
-          onOk: () => {
-            console.log('hola');
-            // Asegúrate de que la navegación esté dentro de la función
+          title: 'Success!!!',
+          message: 'Your product has been published',
+          onOk: () =>
+          {
             this.router.navigate(['']);
           }
         },
