@@ -21,7 +21,7 @@ export class MyProfilePageComponent
     and discover the perfect addition to your gaming setup while saving money and contributing to a more sustainable future.`;
 
   public profileDescription : string = `My name is Sophia Bloom, and I’m the owner of this store. As a lifelong gamer,
-    I’ve always loved the magic of video games and the memories they create. That’s why I started this store—to give
+    I’ve always loved the magic of video games and the memories they create. That’s why I started this store to give
     consoles a second life and help others rediscover their favorite gaming moments without breaking the bank.`;
 
   public onTimeDelivery : string =  'On-time deliveries ';

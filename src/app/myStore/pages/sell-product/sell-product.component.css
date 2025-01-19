@@ -7,6 +7,12 @@
 }
 
 
+.custom-text-justify
+{
+  text-align: justify;
+}
+
+
 img[mat-card-image]
 {
   max-width   : 500px;
@@ -14,7 +20,7 @@ img[mat-card-image]
 }
 
 
-mat-card-actions 
+mat-card-actions
 {
   display           :   flex;
   justify-content   :   center;
@@ -38,7 +44,7 @@ mat-card-actions
   }
 
 
-  mat-card-actions button 
+  mat-card-actions button
   {
     font-size : 0.8em;
   }
