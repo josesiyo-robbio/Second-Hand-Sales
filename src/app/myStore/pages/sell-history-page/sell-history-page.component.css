@@ -10,3 +10,19 @@ table {
 td, th {
   width: 25%;
 }
+
+.table-container {
+  overflow-x: auto;
+}
+
+.mat-paginator {
+  margin-top: 16px;
+}
+
+/* Ajustar celdas para pantallas pequeñas */
+@media (max-width: 600px) {
+  td, th {
+    width: auto;
+    word-wrap: break-word;
+  }
+}

@@ -2,14 +2,8 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import {HistoryProduct} from '../../interfaces/history-product';
 
-export interface ProductData {
-  id: string;
-  name: string;
-  price: number;
-  date: string;
-  status: string;
-}
 
 @Component({
   selector: 'myStore-sell-history-page',
@@ -19,7 +13,7 @@ export interface ProductData {
 })
 export class SellHistoryPageComponent implements AfterViewInit {
   displayedColumns: string[] = ['id', 'name', 'price', 'date', 'status'];
-  dataSource: MatTableDataSource<ProductData>;
+  dataSource: MatTableDataSource<HistoryProduct>;
   pageSizeOptions: number[] = [5, 10, 25];  // Opciones predeterminadas
   paginatorPageSize: number = 5;  // Tamaño de página predeterminado
 
